@@ -1,5 +1,20 @@
 <!DOCTYPE html>
 <html>
+	<!--  When you are coding remember to comment!  -->
+<style>
+h1 {
+	font-family: Cambria;
+}
+ul {
+	font-size: 120%;
+}
+a:link, a:visited {
+	color: blue;
+}
+a:hover, a:active {
+	color: rgba(0, 0, 256, 0.7);
+}
+</style>
 	<head>
 		<meta charset = "utf-8">
 		<title>A Codebook for HTML</title>
@@ -7,40 +22,73 @@
 		<img src = "title.jpg" alt = "Title img" width = "1265" height = "70">
 	</head>
 	<body>
-		<h1 style = "font-family:Cambria;">Intro</h1>
-		<ul>
-			<p style = "background-color:plum;">This is a simple Codebook
+		<h1 id = "Intro">Intro</h1>
+		<ul style = "font-size:100%;">
+			<p style = "background-color:plum;">This is a <q><sub>simple</sub></q> <abbr title = "Coding Notebook">Codebook</abbr>
 			<br>Made with HTML
 			</p>
-			<p style = "color:red; font-family:Lucida Console; text-align:center;">contains every code I learned (?</p>
-			<pre style = "font-size:120%;"><b>Written by revcoding</b></pre>
+			<p style = "color:red; font-family:Lucida Console; text-align:center;">contains every <strong>code</strong> I learned <small>(?</small></p>
+			<!-- use background image here -->
+			<pre style = "font-size:120%; border:2px solid DodgerBlue; padding:20px; background-image: url('icon.png')"><b>Written by revcoding</b></pre>
 		</ul>
 		<hr>
 
-		<h1 style = "font-family:Cambria;">Tutorials</h1>
-		<ul style = "font-size:120%;">
-			<li><a href = "https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web/HTML_basics">Basic Lesson</a></li>
-			<li><a href = "https://www.w3schools.com/html/">w3schools.com</a></li>
-			<li><a href = "https://medium.com/%E9%80%B2%E6%93%8A%E7%9A%84-git-git-git/%E5%BE%9E%E9%9B%B6%E9%96%8B%E5%A7%8B-%E7%94%A8github-pages-%E4%B8%8A%E5%82%B3%E9%9D%9C%E6%85%8B%E7%B6%B2%E7%AB%99-fa2ae83e6276">One Way to Publish HTML</a></li>
+		<h1 id = "Tutorials">Tutorials</h1>
+		<ul>
+			<li><a href = "https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web/HTML_basics" target = "_blank">Basic Lesson</a></li>
+			<li><a href = "https://www.w3schools.com/html/" target = "_blank">w3schools.com</a></li>
+			<li><a href = "https://medium.com/%E9%80%B2%E6%93%8A%E7%9A%84-git-git-git/%E5%BE%9E%E9%9B%B6%E9%96%8B%E5%A7%8B-%E7%94%A8github-pages-%E4%B8%8A%E5%82%B3%E9%9D%9C%E6%85%8B%E7%B6%B2%E7%AB%99-fa2ae83e6276" target = "_blank">One Way to Publish HTML</a></li>
 		</ul>
 		<hr>
 
-		<h1 style = "font-family:Cambria;">Other Imformation</h1>
-		<ul style = "font-size:120%">
-			<li><a href = "https://www.hostinger.com/tutorials/best-html-web-fonts">Good Fonts</a></li>
+		<h1 id = "Other Imformations">Other Imformations</h1>
+		<ul>
+			<li><a href = "https://www.hostinger.com/tutorials/best-html-web-fonts" target = "_blank">Good Fonts</a></li>
+			<li><a href = "https://www.w3schools.com/html/html_links_colors.asp" target = "_blank">CSS link button</a></li>
+			<li><a href = "https://www.w3schools.com/html/html_images_imagemap.asp" target = "_blank">links in one picture (image map)</a></li>
+			<li><a href = "https://www.w3schools.com/html/html_images_background.asp" target = "_blank">background-image</a></li>
+			<li><a href = "https://www.w3schools.com/html/html_images_picture.asp" target = "_blank">picture element</a></li>
 		</ul>
 		<hr>
 
-		<h1 style = "font-family:Cambria;">Notes</h1>
+		<h1 id = "Grammers cann't use naturally">Grammers can't use naturally</h1>
+		<ul>
+			<!-- rbga(x, y, z, a) -> 0 <= x, y, z <= 256, 0 <= a <= 1 -->
+			<li><i style = "color:rgba(30, 50, 200, 0.5);"><ins>An apple</ins> <del>A drug</del> a day keeps doctor away.</i></li>
+			<!-- rbg(x, y, z) -> 0 <= x, y, z <= 256 -->
+			<li><em style = "color:rgb(200, 50, 30);">An Apple a day keeps doctor away.</em></li>
+			<li>y = 2<sup>x</sup></li>
+			<li><address>Taiwan</address></li>
+			<li><cite>Harry Potter</cite></li>
+			<li><bdo dir = "rtl">reverse</bdo> <sub><b>(read from right to left)</b></sub></li>
+			<li><a href = "#Intro" title = "Intro">Jump to Intro</a></li>
+		</ul>
+		<hr>
+
+		<h1 id = "Notes">Notes</h1>
 		<h2 style = "font-size:20px; font-family:Cambria;">HTML Attributes</h2>
-		<ol>
+		<ol><blockquote cite = "https://www.w3schools.com/html/html_attributes.asp">
 			<li>All HTML elements can have <b>attributes</b></li>
-			<li>The <b>href</b> attribute of <b>&lt;a&gt;</b> specifies the URL of the page the link goes to</li>
-			<li>The <b>src</b> attribute of <b>&lt;img&gt;</b> specifies the path to image to be displayed</li>
+			<li>The <mark>href</mark> attribute of <mark>&lt;a&gt;</mark> specifies the URL of the page the link goes to</li>
+			<li>The <mark>src</mark> attribute of <mark>&lt;img&gt;</mark> specifies the path to image to be displayed</li>
 			<li>...</li>
-		</ol>
+		</blockquote></ol>
+		<!--
+	  		can use <img src = "url" alt = "sth" sytle = "width:5px; height:5px">
+			this is easier for CSS to set
+		-->
 		<img src = "note1.PNG" alt = "note1" width = "600" height = "200">
 		<br>
 		<img src = "note2.PNG" alt = "note2" width = "400" height = "200">
+		<br>
+		<img src = "note3.PNG" alt = "note3" width = "500" height = "200">
+		<br>
+		<img src = "note4.PNG" alt = "note4" width = "500" height = "280">
+		<br>
+		<img src = "note5.PNG" alt = "note5" width = "700" height = "200">
+		<br>
+		<img src = "note6.PNG" alt = "note6" width = "700" height = "200">
+		<br>
+		<img src = "note7.PNG" alt = "note7" width = "650" height = "150">
 	</body>
 </html>
