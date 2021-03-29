@@ -1,6 +1,23 @@
 #define endl '\n'
 #define IO cin.tie(0), ios_base::sync_with_stdio(0)
 
+template<class T>
+istream& operator>>(istream& is, vector<T>& vt) {
+	for(auto& i : vt)
+		is >> i;
+	return is;
+}
+template<class T, unsigned int N>
+istream& operator>>(istream& is, array<T, N>& ary) {
+	for(auto& i : ary)
+		is >> i;
+	return is;
+}
+template<class T1, class T2>
+istream& operator>>(istream& is, pair<T1, T2> pr) {
+	is >> pr.first >> pr.second;
+	return is;
+}
 template<class T> void read(T& x) {
 	cin >> x;
 	cin.get();
@@ -8,16 +25,6 @@ template<class T> void read(T& x) {
 template<class T, class ... P> void read(T& x, P& ... t) {
 	cin >> x;
 	read(t...);
-}
-template<class T> void readc(T& c) { // readcontainer
-	for(auto& i : c)
-		cin >> i;
-	cin.get();
-}
-template<class T, class ... P> void readc(T& c, P& ... t) {
-	for(auto& i : c)
-		cin >> i;
-	readc(t...);
 }
 template<class T> void readl(T& x) { // readline
 	getline(cin, x);
