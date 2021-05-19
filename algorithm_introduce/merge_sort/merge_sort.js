@@ -1,5 +1,10 @@
+data = {
+    err_msg: "ERR_MSG >> Invalid Type",
+    code: "function merge_sort(l, r) { // [l, r) \n     // sort global array \"arr\" \n     var mid = parseInt((l+r)/2); \n     if(l == r-1) { \n         return; \n     } else { \n         merge_sort(l, mid); \n         merge_sort(mid, r); \n     } \n     al = []; \n     ar = []; \n     for(var i = l; i &lt mid; ++i) al.push(arr[i]); \n     for(var i = mid; i &lt r; ++i) ar.push(arr[i]); \n     var il = 0, ir = 0; \n     while(il &lt al.length && ir &lt ar.length) { \n         if(al[il] &lt ar[ir]) \n             arr[l++] = al[il++]; \n         else \n             arr[l++] = ar[ir++]; \n     } \n     while(il &lt al.length) arr[l++] = al[il++]; \n     while(ir &lt ar.length) arr[l++] = ar[ir++]; \n}",
+    hls: ["while", "var", "function", "if", "else", "for", "return", "+", "-", "*", "/", "=", "!", "%", "&gt", "&lt", "^", ":", ",", "&", "|", ".", ";"]
+};
+
 var arr = [];
-var err_msg = "ERR_MSG >> Invalid Type"
 
 function setup() {
     gen_random_array();
@@ -21,8 +26,80 @@ function gen_random_array() {
     document.getElementById("input").value = def_ipt;
 }
 
+function split(str, key) {
+    recorder = [-1]
+    ret = []
+    for(var i = 0; i < str.length; ++i) {
+        if(str.substr(i, 1) == key)
+            recorder.push(i);
+    }
+    recorder.push(str.length);
+    for(var i = 1; i < recorder.length; ++i) {
+        ret.push(str.slice(recorder[i-1]+1, recorder[i]));
+    }
+    return ret;
+}
+
+function printer() {
+    o = "Before merge_sort function\n"
+    o += "[" + arr.join(", ") + "]\n\n";
+    o += "After merge_sort function\n"
+    merge_sort(0, arr.length);
+    o += "[" + arr.join(", ") + "]";
+    document.getElementById("output").value = o;
+}
+
+function hightlight(str) {
+    return "<a class=\"highlight\">" + str + "</a>";
+}
+
+function invisible(str) {
+    return "<a class=\"invisible\">" + str + "</a>";
+}
+
 function print_code() {
-    document.getElementById("code").innerHTML = merge_sort;
+    opt = "<ol class=\"code_line\">";
+    lines = split(data.code, "\n");
+    for(var lns = 0; lns < lines.length; ++lns) {
+        opt += "<li class=\"code\">"
+        words = split(lines[lns], " ")
+        var isnc = false;
+        for(var i = 0; i < words.length; ++i) {
+            var is_hi = false;
+            if(words[i] == "//")
+                isnc = true;
+            if(isnc) {
+                opt += invisible(words[i]) + " ";
+                continue;
+            } 
+            if(data.hls.includes(words[i])) {
+                opt += hightlight(words[i]);
+                is_hi = true;
+            }
+            if(!is_hi) {
+                console.log(words[i])
+                for(var j = 0; j < words[i].length; ++j) {
+                    var klen = -1;
+                    for(var k = 0; k < data.hls.length; ++k) {
+                        if(j+data.hls[k].length > words[i].length)
+                            continue;
+                        if(words[i].substr(j, data.hls[k].length) == data.hls[k])
+                            klen = data.hls[k].length;
+                    }
+                    if(klen > 0) {
+                        opt += hightlight(words[i].substr(j, klen));
+                        j += (klen-1);
+                    } else {
+                        opt += words[i][j];
+                    }
+                }
+            }
+            opt += " ";
+        }
+        opt += "</li>";
+    }
+    opt += "</ol>";
+    document.getElementById("code").innerHTML = opt;
 }
 
 function checker(value, index, array) {
@@ -33,7 +110,7 @@ function checker(value, index, array) {
 function array_input(data) {
     numberic = data.every(checker);
     if(!numberic) {
-        document.getElementById("output").value = err_msg;
+        document.getElementById("output").value = data.err_msg;
         return false;
     }
     for(var i = 0; i < data.length; ++i)
