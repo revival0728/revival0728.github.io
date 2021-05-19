@@ -43,9 +43,15 @@ function split(str, key) {
 function printer() {
     o = "Before merge_sort function\n"
     o += "[" + arr.join(", ") + "]\n\n";
-    o += "After merge_sort function\n"
+    o += "After merge_sort function\n";
+    pre_time = performance.now();
     merge_sort(0, arr.length);
-    o += "[" + arr.join(", ") + "]";
+    now_time = performance.now();
+    during = (now_time-pre_time)/(1e6);
+    during = during.toFixed(2);
+    o += "[" + arr.join(", ") + "]\n\n";
+    o += ">> Used " + during + " second";
+    if(during != 0 && during != 1) o += "s";
     document.getElementById("output").value = o;
 }
 
@@ -77,7 +83,6 @@ function print_code() {
                 is_hi = true;
             }
             if(!is_hi) {
-                console.log(words[i])
                 for(var j = 0; j < words[i].length; ++j) {
                     var klen = -1;
                     for(var k = 0; k < data.hls.length; ++k) {
@@ -103,7 +108,6 @@ function print_code() {
 }
 
 function checker(value, index, array) {
-    console.log(isNumeric(value));
     return isNumeric(value);
 }
 
@@ -141,15 +145,6 @@ function reader() {
         ret.push(ipt.slice(recorder[i-1]+1, recorder[i]));
     }
     return ret;
-}
-
-function printer() {
-    o = "Before merge_sort function\n"
-    o += "[" + arr.join(", ") + "]\n\n";
-    o += "After merge_sort function\n"
-    merge_sort(0, arr.length);
-    o += "[" + arr.join(", ") + "]";
-    document.getElementById("output").value = o;
 }
 
 function merge_sort(l, r) { // [l, r)
