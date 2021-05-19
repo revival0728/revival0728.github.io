@@ -43,7 +43,8 @@ function open_select(id) {
     }
     if(!id_isop[id]) {
         for(var i = 0; i < sel_data[id].length; ++i)
-            opt += "<ul class=\"select_list\"><a href=\"" + sel_data[id][i][1] + "\">" + sel_data[id][i][0] + "</a></ul>";
+            opt += "<ul class=\"select_list\" onclick=\\\"location=\"" + sel_data[id][i][1] + "\\\"\">"+ "<a>" + sel_data[id][i][0] + "</a></ul>";
+        console.log(opt);
     }
     id_isop[id] = !id_isop[id];
     document.getElementById(id_table[id]).innerHTML = opt;
