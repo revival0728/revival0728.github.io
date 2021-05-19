@@ -1,0 +1,18 @@
+body {
+    background-color: rgba(147, 32, 214, 0.384);
+}
+
+.form_box {
+    border-left-style: solid;
+    border-left-width: 8px;
+    border-right-style: solid;
+    border-right-width: 8px;
+    border-color: rgba(147, 32, 214, 0.384);
+    border-radius: 7px;
+    background-color: rgba(147, 32, 214, 0.384);
+    color: rgb(15, 180, 230);
+    font-family: "Consolas";
+    position: sticky;
+    display: block;
+    margin: auto;
+}
