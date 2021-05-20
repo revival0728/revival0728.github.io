@@ -16,3 +16,19 @@ body {
     display: block;
     margin: auto;
 }
+
+.round_button {
+    background-color: darkmagenta;
+    color: rgb(152, 229, 255);
+    padding: 30px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.round_button:active, .round_button:hover {
+    background-color: rgba(139, 0, 139, 0.616);
+    color: rgb(0, 112, 150);
+    padding: 30px;
+    border-radius: 5px;
+}
