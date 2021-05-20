@@ -18,9 +18,9 @@ hls_data = {
 };
 
 code_data = {
-    cpp_hello_world: "#include &ltiostream&gt \n using namespace std; \n  \n int main() { \n    cout &lt&lt \"hello, world!\" &lt&lt '\\n'; \n }",
-    js_hello_world: "function main() { \n     console.log(\"Hello, world!\"); \n     document.getElementById(\"Output\").innerHTML = \"hello, world\"; \n }",
-    py_hello_world: "def main(): \n     print('hello, world!') \n  \n if __name__ == \"__main__\": \n     main()",
+    cpp_hello_world: "#include &ltiostream&gt \nusing namespace std; \n  \nint main() {\n    cout &lt&lt \"hello, algorithm!\" &lt&lt '\\n'; \n}",
+    js_hello_world: "function main() { \n    console.log(\"Hello, algorithm!\"); \n    document.getElementById(\"Output\").innerHTML = \"hello, algorithm!\"; \n}",
+    py_hello_world: "def main(): \n    print('hello, algorithm!') \n  \nif __name__ == \"__main__\": \n    main()",
 };
 
 function reset() {

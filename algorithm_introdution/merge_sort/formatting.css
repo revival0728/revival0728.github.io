@@ -24,6 +24,7 @@
 
 .code_line {
     background-color: rgb(71, 71, 70);
+    padding-left: 50px;
     color: rgba(0, 0, 0, 0.651);
 }
 
@@ -51,6 +52,71 @@
     resize: none;
     width: 500px;
     height: 200px;
-    float: left;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+}
+
+.IO_text {
+    border-style: solid;
+    border-color: rgba(170, 166, 166, 0.322);
+    border-width: 5px;
+    border-spacing: 5px;
+    border-radius: 5px;
+    font-size: 120%;
+    font-weight: bold;
+    background-color: rgba(170, 166, 166, 0.322);
+    color: black;
+    resize: none;
+    width: 500px;
+    height: 24px;
+}
+
+.content {
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 120%;
+}
+
+.text_box {
+    background-color: rgba(254, 255, 170, 0.24);
+    border-radius: 5px;
+    border: rgba(170, 166, 166, 0.322);
+    border-style: solid;
+    border-width: 3px;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: auto;
+    margin-bottom: 17px;
+}
+
+.text_heading {
+    border-width: 10px;
+    border-style: sold;
+}
+
+hr {
+    border: 0;
+    height: 2px;
+    background: rgba(170, 166, 166, 0.322);
+}
+
+.round_button {
+    background-color: rgba(170, 166, 166, 0.322);
+    color: black;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.round_button:active, .round_button:hover {
+    background-color: rgb(128, 125, 125);
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.head_picture {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 99.9%;
 }
