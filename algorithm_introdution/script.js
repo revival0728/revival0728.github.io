@@ -12,14 +12,14 @@ sel_data = [ // [Name, Url]
 ]
 
 code_data = {
-    cpp_hello_world: "#include &ltiostream&gt \nusing namespace std; \n  \nint main() {\n    cout &lt&lt \"hello, algorithm!\" &lt&lt '\\n'; \n}",
-    js_hello_world: "function main() { \n    console.log(\"Hello, algorithm!\"); \n    document.getElementById(\"Output\").innerHTML = \"hello, algorithm!\"; \n}",
-    py_hello_world: "def main(): \n    print('hello, algorithm!') \n  \nif __name__ == '__main__': \n    main()",
+    bsh_code: "bool binary_search(vector&ltint&gt& arr, int target) { \n    int l = 0, r = arr.size()-1, mid = (l+r)/2; \n    while(l &lt= r) { \n        mid = (l+r)/2; \n        if(target == arr[mid]) \n            break; \n        else if(target &lt arr[mid]) \n            r = mid-1; \n        else \n            l = mid+1; \n    } \n    return mid&ltarr.size() ? target == arr[mid] : false; \n}",
+    zok_code: "int ZOKnapSack(int s, vector&ltint&gt c, vector&ltint&gt w) { \n	vector&ltint&gt dp(s+1, 0); \n	for(int i = 0; i &lt c.size(); ++i) { \n		for(int j = s; j-c[i] &gt= 0; --j) \n			dp[j] = min(dp[j], dp[j-c[i]]+w[i]); \n	} \n	return dp[s]; \n}",
+    mspn_code: "using ll = long long; \n \nstruct node { \n	int w, nd; \n	node(int _w, int _nd) : w(_w), nd(_nd) {} \n \n	friend bool operator&gt(const node& a, const node& b) { \n		return a.w &gt b.w; \n	} \n}; \n \nll Prims(vector&ltvector&ltnode&gt&gt graph, int n, int m) { \n	priority_queue&ltnode, vector&ltnode&gt, greater&ltnode&gt&gt pq; \n	vector&ltbool&gt vis(n, 0); \n	ll ans = 0; \n	pq.emplace(0, 0); \n	while(!pq.empty()) { \n		auto t = pq.top(); pq.pop(); \n		if(vis[t.nd]) continue; \n		ans += t.w, vis[t.nd] = 1; \n		for(auto& nd : graph[t.nd]) { \n			if(!vis[nd.nd]) \n				pq.push(nd); \n		} \n	} \n	return ans; \n}",
 };
 
 hls_data = {
     js_hls: [["//", "\"", "'", "+", "-", "*", "/", "=", "!", "%", "&gt", "&lt", "^", ":", ",", "&", "|", ".", ";", "(", ")", "[", "]", "{", "}"], ["var", "function", "while", "for", "if", "else", "console"]],
-    cpp_hls: [["//", "\"", "'", "&gt", "&lt", "{", "}", "[", "]", "(", ")", "#", ",", "!", "-", "+", "*", "/", "&", "|", ":", "%", ";"], ["if", "cout", "include", "cin", "vector", "else", "for", "while", "namespace", "using", "int", "oduble", "float", "long", "template", "class", "void", "bool", "return", "define", "ifdef", "ifndef", "endif", "auto"]],
+    cpp_hls: [["//", "=", "?","\"", "'", "&gt", "&lt", "{", "}", "[", "]", "(", ")", "#", ",", "!", "-", "+", "*", "/", "&", "|", ":", "%", ";"], ["if", "cout", "include", "cin", "vector", "else", "for", "while", "namespace", "using", "int", "oduble", "float", "long", "template", "class", "void", "bool", "return", "define", "ifdef", "ifndef", "endif", "auto", "min", "struct", "friend", "operator", "const", "priority_queue", "greater", "continue"]],
     py_hls: [["#", "'", "+", "*", "-", "=", "/", ":", "[", "]", "(", ")"], ["def", "return", "if", "else", "elif", "__name__", "print", "input", "map"]],
 };
 
@@ -30,9 +30,9 @@ function reset() {
 
 function setup() {
     reset();
-    print_code(code_data.cpp_hello_world, hls_data.cpp_hls, "//", "\"", "cpp_cfhw");
-    print_code(code_data.js_hello_world, hls_data.js_hls, "//", "\"", "js_cfhw");
-    print_code(code_data.py_hello_world, hls_data.py_hls, "#", "'", "py_cfhw");
+    print_code(code_data.bsh_code, hls_data.cpp_hls, "//", "\"", "bsh");
+    print_code(code_data.zok_code, hls_data.cpp_hls, "//", "\"", "zok");
+    print_code(code_data.mspn_code, hls_data.cpp_hls, "//", "\"", "mspn");
 }
 
 function open_select(id) {
@@ -181,6 +181,36 @@ function print_code(code="", hls=[[""], [""]], ncc="", strsc="", target="") {
     }
     opt += "</ol>"
     document.getElementById(target).innerHTML = opt;
+}
+
+function check_url(url) {
+  try {
+    new URL(url);
+  } catch (e) {
+    console.error(e);
+    return false;
+  }
+  return true;
+};
+
+var prange = ["A", "B", "C", "D", "E", "F", "G", "H", "I"];
+
+function make_plink(olink, contest, problem) {
+    return olink + "/" + contest + "/" + prange[problem];
+}
+
+function random_problem_picker() { //beta
+    var olink = "https://codeforces.com/problemset/problem";
+    var contest = Math.floor(Math.random() * 10000) % 1520;
+    var problem = Math.floor(Math.random() * 10) % prange.length;
+    if(contest < 500) contest += 500;
+    while(!check_url(make_plink(olink, contest, problem))) {
+        console.log(make_plink(olink, contest, problem));
+        problem = Math.floor(Math.random() * 10) % prange.length;
+    }
+    var link = make_plink(olink, contest, problem);
+    document.getElementById("gotp").href = link;
+    document.getElementById("stp").value = link;
 }
 
 /*function reader() {
