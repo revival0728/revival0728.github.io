@@ -1,13 +1,13 @@
 var select_num = 6;
-id_table = ["sas", "dp", "gd", "gh", "tr", "ps"]
+id_table = ["sas", "dpagd", "gh", "tr", "adt", "ps"]
 id_isop = []
 
 sel_data = [ // [Name, Url]
     [["Merge Sort", "./merge_sort/"]], // sas
-    [["nothing yet", ""]], // dp
-    [["nothing yet", ""]], // gd
+    [["nothing yet", ""]], // dpagd
     [["nothing yet", ""]], // gh
     [["nothing yet", ""]], // tr
+    [["IO Optimization", "./IO_optimization/"]], // adt
     [["nothing yet", ""]], // ps
 ]
 

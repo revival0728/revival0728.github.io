@@ -1,0 +1,40 @@
+<!DOCTYPE html>	
+<html>
+	<head>
+		<script src="script.js"></script>
+		<link rel="stylesheet" href="formatting.css">
+		<title>[ALG] IO Optimization </title>
+		<link rel = "icon" href = "../icon.png" width = "50" height = "50">
+	</head>
+	<body style="background-color: rgba(255, 248, 205, 0.445);">
+		<a href="../"><img src = "../title.png" alt = "title img" class="head_picture"></a>
+		<h1 style="text-align: center; margin-bottom: 75px; margin-top: 30px;">IO Optimization</h1>
+		<div class="text_box">
+			<h2 class="text_heading">Content</h2>
+			<hr>
+			<pre>There are three element in C++ IO optimization.</pre>
+			<ol>
+				<b><li>cin.tie(0)</li>
+				<li>ios_base::sync_with_stdio(0)</li>
+				<li>#define endl '\n' or don't use endl use '\n' instead</li></b>
+			</ol>
+			<pre>If you miss one then it won't work.</pre>
+			<pre id="crt" class="code_box"></pre>
+		</div>
+		<div class="text_box">
+			<h2>Error Example</h2>
+			<hr>
+			<pre>In this example.
+It forgot to use <b>#define endl '\n'</b> and didn't use '\n' instead endl.
+So it will still get a <b>TLE</b> in the testing.</pre>
+			<pre id="err" class="code_box"></pre>
+		</div>
+		<div class="text_box">
+			<h2>Conclusion</h2>
+			<hr>
+			<pre>Be careful of every part in IO optimization.
+Specially <b>endl</b>.</pre>
+		</div>
+		<script>setup();</script>
+	</body>
+</html>

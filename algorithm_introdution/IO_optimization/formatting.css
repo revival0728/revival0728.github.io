@@ -1,0 +1,142 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.code_box {
+    border-left-style: solid;
+    border-left-width: 8px;
+    border-left-color: rgb(15, 180, 230);
+    border-right-style: solid;
+    border-right-color: black;
+    border-right-width: 5px;
+    border-radius: 7px;
+    background-color: black;
+    color: rgb(15, 180, 230);
+    font-family: "Consolas";
+}
+
+.code {
+    background-color: black;
+    color: rgb(15, 180, 230);
+    font-family: "Consolas";
+}
+
+.code_line {
+    background-color: rgb(71, 71, 70);
+    padding-left: 50px;
+    color: rgba(0, 0, 0, 0.651);
+}
+
+.highlight_word {
+    color: khaki;
+    font-weight: bold;
+    font-family: "Consolas";
+    font-size: 100%;
+}
+
+.highlight_symbol {
+    color: rgb(221, 74, 74);
+    font-weight: bold;
+    font-family: "Consolas";
+    font-size: 100%;
+}
+
+.highlight_number {
+    color: rgb(186, 116, 252);
+    font-weight: bold;
+    font-family: "Consolas";
+    font-size: 100%;
+}
+
+.invisible {
+    color: limegreen;
+    font-family: "Consolas";
+}
+
+.highlight_str {
+    color: rosybrown;
+    font-family: "Consolas";
+    font-size: 100%;
+}
+
+.IO_box {
+    border-style: solid;
+    border-color: rgb(71, 71, 70);
+    border-width: 5px;
+    border-spacing: 5px;
+    border-radius: 5px;
+    font-family: Courier;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    resize: none;
+    width: 500px;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+.IO_text {
+    border-style: solid;
+    border-color: rgba(170, 166, 166, 0.322);
+    border-width: 5px;
+    border-spacing: 5px;
+    border-radius: 5px;
+    font-size: 120%;
+    font-weight: bold;
+    background-color: rgba(170, 166, 166, 0.322);
+    color: black;
+    resize: none;
+    width: 500px;
+    height: 24px;
+}
+
+.content {
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 120%;
+}
+
+.text_box {
+    background-color: rgba(254, 255, 170, 0.24);
+    border-radius: 5px;
+    border: rgba(170, 166, 166, 0.322);
+    border-style: solid;
+    border-width: 3px;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: auto;
+    margin-bottom: 17px;
+}
+
+.text_heading {
+    border-width: 10px;
+    border-style: sold;
+}
+
+hr {
+    border: 0;
+    height: 2px;
+    background: rgba(170, 166, 166, 0.322);
+}
+
+.round_button {
+    background-color: rgba(170, 166, 166, 0.322);
+    color: black;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.round_button:active, .round_button:hover {
+    background-color: rgb(128, 125, 125);
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.head_picture {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1250px;
+}
