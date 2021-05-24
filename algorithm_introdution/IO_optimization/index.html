@@ -12,28 +12,27 @@
 		<div class="text_box">
 			<h2 class="text_heading">Content</h2>
 			<hr>
-			<pre>There are three element in C++ IO optimization.</pre>
+			<pre>There are three elements in C++ IO optimization.</pre>
 			<ol>
 				<b><li>cin.tie(0)</li>
 				<li>ios_base::sync_with_stdio(0)</li>
-				<li>#define endl '\n' or don't use endl use '\n' instead</li></b>
+				<li>Use either #define endl '\n' or use '\n' instead</li></b>
 			</ol>
-			<pre>If you miss one then it won't work.</pre>
+			<pre>Optimization will not work if any of the elements is missed.</pre>
 			<pre id="crt" class="code_box"></pre>
 		</div>
 		<div class="text_box">
 			<h2>Error Example</h2>
 			<hr>
-			<pre>In this example.
-It forgot to use <b>#define endl '\n'</b> and didn't use '\n' instead endl.
-So it will still get a <b>TLE</b> in the testing.</pre>
+			<pre>In this example, neither <b>#define endl '\n'</b> nor <b>use '\n' instead endl</b> is used, which makes optimization incomplete.
+So it would still get a <b>TLE</b> in the testing.</pre>
 			<pre id="err" class="code_box"></pre>
 		</div>
 		<div class="text_box">
 			<h2>Conclusion</h2>
 			<hr>
 			<pre>Be careful of every part in IO optimization.
-Specially <b>endl</b>.</pre>
+Especially <b>endl</b>.</pre>
 		</div>
 		<script>setup();</script>
 	</body>
