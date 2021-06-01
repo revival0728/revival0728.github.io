@@ -1,0 +1,54 @@
+<!DOCTYPE html>	
+<html>
+	<head>
+		<script type="text/javascript" src="script.js"></script>
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+		<link rel="stylesheet" href="formatting.css">
+		<title>[ALG] IO Optimization </title>
+		<link rel = "icon" href = "../icon.png" width = "50" height = "50">
+	</head>
+	<body style="background-color: rgba(255, 248, 205, 0.445);">
+		<a href="../"><img src = "../title.png" alt = "title img" class="head_picture"></a>
+		<h1 style="text-align: center; margin-bottom: 75px; margin-top: 30px;">Ternary Search</h1>
+		<div class="text_box">
+			<h2>Concept</h2>
+			<hr>
+			<p>This is a search algorithm which has \( O(\log_3 N) \) time complexity.</p>
+			<p>The different between <b>binary search</b> is it has <b>2</b> middle value when searching.</p>
+			<p>When searching, we cut the segment into 3 part which has same length.</p>
+			<ol>
+				<li>Left to first middle</li>
+				<li>First middle to second middle</li>
+				<li>Second middle to right</li>
+			</ol>
+			<p>Just like <b>binary search</b>. We analyze every part of segment.</p>
+			<p>First hypothesis we are searching value <b>key</b> in array <b>arr[N]</b>.</p>
+			<p>Following is the recursive relationship for this searching.</p>
+			\( \begin{cases}
+			If \quad key < arr[Mid_L], \quad R = Mid_L-1 \\
+			If \quad key > arr[Mid_R], \quad L = Mid_R+1 \\
+			Else \quad L = Mid_L+1, \quad R = Mid_R-1
+			\end{cases} \)
+			<p>Know we know how to search the value.</p>
+			<p>But how to calculate the value of \(Mid_L\) and \(Mid_R \) ?</p>
+			<p>Because the <b>ternary search</b> cut the segment into 3 part which has same length.</p>
+			<p>So the \( Mid_L=l+\frac{r-l}{3} \) and the \(Mid_R=r-\frac{r-l}{3} \)</p>
+			<p>Now we know the concept of <b>ternary search.</b></p>
+			<p>That means we can start coding!</p>
+		</div>
+		<div class="text_box">
+			<h2>Source code</h2>
+			<hr>
+			<pre id="ts" class="code_box"></pre>
+		</div>
+		<div class="text_box">
+			<h2>Problem</h2>
+			<hr>
+			<b><p>problem url: <a href="http://dandanjudge.fdhs.tyc.edu.tw/ShowProblem?problemid=a592" target="_blank">DDJ a592</a></p></b>
+			<p>This problem statement is written in Chinese.</p>
+			<p>If you can't read it. You can find a problem on <b>Codeforces</b>.</p>
+		</div>
+		<script>setup();</script>
+	</body>
+</html>

@@ -1,12 +1,12 @@
 var select_num = 6;
-id_table = ["sas", "dpagd", "gh", "tr", "adt", "ps"]
+id_table = ["sas", "dpagd", "ghatr", "ds", "adt", "ps"]
 id_isop = []
 
 sel_data = [ // [Name, Url]
-    [["Merge Sort", "./merge_sort/"]], // sas
+    [["Merge Sort", "./merge_sort/"], ["Ternary Search", "./Ternary_search/"]], // sas
     [["nothing yet", ""]], // dpagd
-    [["nothing yet", ""]], // gh
-    [["nothing yet", ""]], // tr
+    [["nothing yet", ""]], // ghatr
+    [["nothing yet", ""]], // ds
     [["IO Optimization", "./IO_optimization/"]], // adt
     [["nothing yet", ""]], // ps
 ]
@@ -212,18 +212,3 @@ function random_problem_picker() { //beta
     document.getElementById("gotp").href = link;
     document.getElementById("stp").value = link;
 }
-
-/*function reader() {
-    ipt = document.getElementById("input").value;
-    recorder = [-1]
-    ret = []
-    for(var i = 0; i < ipt.length; ++i) {
-        if(ipt.substr(i, 1) == " " || ipt.substr(i, 1) == "\n")
-            recorder.push(i);
-    }
-    recorder.push(ipt.length);
-    for(var i = 1; i < recorder.length; ++i) {
-        ret.push(ipt.slice(recorder[i-1]+1, recorder[i]));
-    }
-    return ret;
-}*/
