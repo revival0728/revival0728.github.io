@@ -24,6 +24,7 @@ body {
     border-radius: 5px;
     text-align: center;
     margin-bottom: 20px;
+    font-size: 24px;
 }
 
 .round_button:active, .round_button:hover {

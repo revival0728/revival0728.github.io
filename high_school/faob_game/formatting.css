@@ -1,0 +1,68 @@
+* {
+    font-family: monospace;
+    font-size: 120%;
+}
+
+body {
+    background-color: rgba(147, 32, 214, 0.384);
+}
+
+.content {
+    color: rgb(95, 89, 89);
+}
+
+.click {
+    color: white;
+    background-color: rgba(84, 17, 122, 0.829);
+    text-decoration: none;
+    padding: 25px;
+    border-radius: 7px;
+}
+
+.click:hover, .click:active {
+    color: rgba(84, 17, 122, 0.829);
+    background-color: white;
+}
+
+.text {
+    resize: none;
+    border-style: solid;
+    height: 37px;
+    width: 400px;
+    border-radius: 5px;
+    background-color: rgb(143, 45, 173);
+    padding: 5px;
+    border-width: 3px;
+    color: white;
+}
+
+.result {
+    resize: none;
+    border-style: solid;
+    height: 37px;
+    width: 63px;
+    border-radius: 5px;
+    background-color: rgb(143, 45, 173);
+    padding: 5px;
+    border-width: 3px;
+    color: white;
+}
+
+.submit {
+    color: white;
+    background-color: rgba(84, 17, 122, 0.829);
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 25px;
+}
+
+.submit:hover, .submit:active {
+    color: rgba(84, 17, 122, 0.829);
+    background-color: white;
+}
+
+.web_info {
+    padding-top: 17%;
+    font-size: 8px;
+}
