@@ -17,7 +17,6 @@ function setup() {
 function check() {
     if(win) return;
     try {
-        ++times;
         var sub = [];
         var guess = document.getElementById("input").value;
         for(var i = 0; i < guess.length; ++i) {
@@ -33,6 +32,7 @@ function check() {
             }
         }
 
+        ++times;
         var a = 0, b = 0;
 
         // calculate A
