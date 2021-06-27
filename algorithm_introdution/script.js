@@ -7,7 +7,7 @@ sel_data = [ // [Name, Url]
     [["nothing yet", ""]], // dpagd
     [["nothing yet", ""]], // ghatr
     [["nothing yet", ""]], // ds
-    [["IO Optimization", "./IO_optimization/"]], // adt
+    [["IO Optimization", "./IO_optimization/"], ["KMP algorithm", "./KMP_algorithm"]], // adt
     [["nothing yet", ""]], // ps
 ]
 

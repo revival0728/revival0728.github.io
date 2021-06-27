@@ -1,0 +1,40 @@
+<!DOCTYPE html>	
+<html>
+	<head>
+		<script type="text/javascript" src="script.js"></script>
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+		<link rel="stylesheet" href="formatting.css">
+		<title>[ALG] KMP algorithm</title>
+		<link rel = "icon" href = "../icon.png" width = "50" height = "50">
+	</head>
+	<body style="background-color: rgba(255, 248, 205, 0.445);">
+		<a href="../"><img src = "../title.png" alt = "title img" class="head_picture"></a>
+		<h1 style="text-align: center; margin-bottom: 75px; margin-top: 30px;">KMP algorithm</h1>
+		<div class="text_box">
+			<h2>Concept</h2>
+			<hr>
+			<p>The time complexity of this algorithm is \(O(N+M)\),</p>
+			<p>which \(N\) is the length of text and \(M\) is the lenght of pattern.</p>
+			<p>Before doing this algorithm, we have to do some preprocesses.</p>
+			<p>We find the <b>LPS(Longest prefix which is also Suffix)</b> of the pattern string.</p>
+			<p>The <b>LPS</b> will help us not to search the substring of text which is in the pattern string again.</p>
+			<p>After finished building <b>LPS</b>, we can start searching.</p>
+			<p>The searching step is kind of naive.</p>
+			<p>Use naive search until you find a character is not same.</p>
+			<p>When you find a character is not same, you move pattern string's index to the last <b>LPS</b> of this index.</p>
+			<p>And keep doing this until the index of text string is equal to its length.</p>
+		</div>
+		<div class="text_box">
+			<h2>Source code</h2>
+			<hr>
+			<pre id="kmp" class="code_box"></pre>
+		</div>
+		<div class="text_box">
+			<h2>Problem</h2>
+			<hr>
+			<b><p>problem url: <a href="https://cses.fi/problemset/task/1753/" target="_blank">CSES String Matching</a></p></b>
+		</div>
+		<script>setup();</script>
+	</body>
+</html>
