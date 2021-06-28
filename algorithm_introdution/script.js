@@ -6,8 +6,8 @@ sel_data = [ // [Name, Url]
     [["Merge Sort", "./merge_sort/"], ["Ternary Search", "./Ternary_search/"]], // sas
     [["nothing yet", ""]], // dpagd
     [["nothing yet", ""]], // ghatr
-    [["nothing yet", ""]], // ds
-    [["IO Optimization", "./IO_optimization/"], ["KMP algorithm", "./KMP_algorithm"]], // adt
+    [["Segment Tree", "./segment_tree/"]], // ds
+    [["IO Optimization", "./IO_optimization/"], ["KMP algorithm", "./KMP_algorithm/"]], // adt
     [["nothing yet", ""]], // ps
 ]
 
