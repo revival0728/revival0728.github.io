@@ -1,0 +1,38 @@
+<!DOCTYPE html>	
+<html>
+	<head>
+		<script type="text/javascript" src="script.js"></script>
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+		<link rel="stylesheet" href="formatting.css">
+		<title>[ALG] Code Beautifier</title>
+		<link rel = "icon" href = "../icon.png" width = "50" height = "50">
+	</head>
+	<body style="background-color: rgba(255, 248, 205, 0.445);">
+		<a href="../"><img src = "../title.png" alt = "title img" class="head_picture"></a>
+		<h1 style="text-align: center; margin-bottom: 75px; margin-top: 30px;">Code Beautifier</h1>
+		<div class="text_box">
+			<h2>Paste code here</h2>
+			<hr>
+			<select id="lan_sel" class="lan_sel_box"></select>
+			<p></p>
+			<span>Status: </span>
+			<span id="status" style="font-family: Consolas; color: green;">Finished</span>
+			<p></p>
+			<textarea id="ipt" class="O_paste_box" spellcheck="false" autofocus></textarea>
+			<p></p>
+		</div>
+		<div class="text_box">
+			<h2>Text Version</h2>
+			<hr>
+			<pre id="be_code" class="code_box"></pre>
+		</div>
+		<div class="text_box">
+			<h2>HTML Version</h2>
+			<hr>
+			<textarea id="html_paste" class="paste_box" spellcheck="false"></textarea>
+		</div>
+		<p style="font-size:10px;">Beta v1.0</p>
+		<script>setup();</script>
+	</body>
+</html>

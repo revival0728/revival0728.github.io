@@ -16,23 +16,23 @@ function setup() {
 
 
 function hightlight_word(str) {
-    return "<a class=\"highlight_word\">" + str + "</a>";
+    return "<span class=\"highlight_word\">" + str + "</span>";
 }
 
 function hightlight_symbol(str) {
-    return "<a class=\"highlight_symbol\">" + str + "</a>";
+    return "<span class=\"highlight_symbol\">" + str + "</span>";
 }
 
 function hightlight_number(str) {
-    return "<a class=\"highlight_number\">" + str + "</a>";
+    return "<span class=\"highlight_number\">" + str + "</span>";
 }
 
 function invisible(str) {
-    return "<a class=\"invisible\">" + str + "</a>";
+    return "<span class=\"invisible\">" + str + "</span>";
 }
 
 function hightlight_str(str) {
-    return "<a class=\"highlight_str\">" + str + "</a>";
+    return "<span class=\"highlight_str\">" + str + "</span>";
 }
 
 /* hls [symbol, words]
@@ -123,7 +123,7 @@ function print_code(code="", hls=[[""], [""]], ncc="", strsc="", target="") {
             else if(group == 2) opt += hightlight_word(ret[j]);
             else if(group == 3) opt += hightlight_number(ret[j]);
             else if(ret[j] == "\n") {
-                opt += ret[j] + "</li>";
+                opt += "</li>";
                 isline = true;
             }
             else opt += ret[j];

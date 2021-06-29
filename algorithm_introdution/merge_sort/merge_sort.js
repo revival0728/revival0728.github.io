@@ -127,23 +127,23 @@ function merge_sort(l, r) { // [l, r)
 }
 
 function hightlight_word(str) {
-    return "<a class=\"highlight_word\">" + str + "</a>";
+    return "<span class=\"highlight_word\">" + str + "</span>";
 }
 
 function hightlight_symbol(str) {
-    return "<a class=\"highlight_symbol\">" + str + "</a>";
+    return "<span class=\"highlight_symbol\">" + str + "</span>";
 }
 
 function hightlight_number(str) {
-    return "<a class=\"highlight_number\">" + str + "</a>";
+    return "<span class=\"highlight_number\">" + str + "</span>";
 }
 
 function invisible(str) {
-    return "<a class=\"invisible\">" + str + "</a>";
+    return "<span class=\"invisible\">" + str + "</span>";
 }
 
 function hightlight_str(str) {
-    return "<a class=\"highlight_str\">" + str + "</a>";
+    return "<span class=\"highlight_str\">" + str + "</span>";
 }
 
 /* hls [symbol, words]
@@ -195,10 +195,6 @@ function print_code(code="", hls=[[""], [""]], ncc="", strsc="", target="") {
                 count_unv = 0;
             }
             var group = -1;
-            if(ret[j] == ncc) {
-                isunv = true;
-                ++count_unv;
-            }
             if(isunv) {
                 if(!(ret[j] == ncc[0] && count_unv == 3)) {
                     opt += invisible(ret[j]);
@@ -214,6 +210,10 @@ function print_code(code="", hls=[[""], [""]], ncc="", strsc="", target="") {
                 isStr = !isStr;
                 opt += hightlight_str(ret[j]);
                 continue;
+            }
+            if(ret[j] == ncc) {
+                isunv = true;
+                ++count_unv;
             }
             if(isStr) {
                 opt += hightlight_str(ret[j]);
@@ -234,7 +234,7 @@ function print_code(code="", hls=[[""], [""]], ncc="", strsc="", target="") {
             else if(group == 2) opt += hightlight_word(ret[j]);
             else if(group == 3) opt += hightlight_number(ret[j]);
             else if(ret[j] == "\n") {
-                opt += ret[j] + "</li>";
+                opt += "</li>";
                 isline = true;
             }
             else opt += ret[j];
@@ -243,3 +243,18 @@ function print_code(code="", hls=[[""], [""]], ncc="", strsc="", target="") {
     opt += "</ol>"
     document.getElementById(target).innerHTML = opt;
 }
+
+/*function reader() {
+    ipt = document.getElementById("input").value;
+    recorder = [-1]
+    ret = []
+    for(var i = 0; i < ipt.length; ++i) {
+        if(ipt.substr(i, 1) == " " || ipt.substr(i, 1) == "\n")
+            recorder.push(i);
+    }
+    recorder.push(ipt.length);
+    for(var i = 1; i < recorder.length; ++i) {
+        ret.push(ipt.slice(recorder[i-1]+1, recorder[i]));
+    }
+    return ret;
+}*/
