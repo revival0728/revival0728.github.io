@@ -1,4 +1,4 @@
-import { beautify, get_lan_data } from 'https://cdn.jsdelivr.net/gh/revival0728/code-beautifier@latest/beautify.js'
+import { beautify, get_lan_data } from 'https://cdn.jsdelivr.net/gh/revival0728/code-beautifier@v1.2-beta/beautify.js'
 
 setup();
 
