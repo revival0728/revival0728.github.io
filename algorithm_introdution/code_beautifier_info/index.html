@@ -1,7 +1,6 @@
 <!DOCTYPE html>	
 <html>
 	<head>
-		<script type="text/javascript" src="script.js"></script>
 		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
 		<link rel="stylesheet" href="formatting.css">
@@ -45,18 +44,14 @@
 			<div class="text_box">
 				<h2>HTML</h2>
 				<hr>
-				<p>Just copy and paste the code in "HTML Version".</p>
-				<p>Make sure you copy both CSS and HTML source code.</p>
-			</div>
-			<div class="text_box">
-				<h2>Hackmd</h2>
-				<hr>
-				<p>Just make sure you satisfy the condition below.</p>
-				<ul>
-					<li>Use <b>{%hackmd @revcoding/code_beautifier_css %}</b> to include the CSS source code.</li>
-					<li>Replace all attribute "class" to "id".</li>
-				</ul>
-				<p>Then just copy and paste the code in "HTML Version/HTML source code".</p>
+				<p>Just use the module below.</p>
+				<pre id="HTML_source"></pre>
+				<script type="module">
+					import { beautify } from 'https://cdn.jsdelivr.net/gh/revival0728/code-beautifier/beautify.js'
+					var code = "import { beautify } from 'https://cdn.jsdelivr.net/gh/revival0728/code-beautifier/beautify.js';";
+					beautify(code, "HTML_source", "javascript");
+				</script>
+				<p>Click <a href="https://github.com/revival0728/code-beautifier" target="_blank" style="text-decoration: none;font-weight: bold; font-size: 140%; font-family: monospace; color: rgba(0, 0, 255, 0.61);">HERE</a> for more imformation.</p>
 			</div>
 		</div>
 		<div class="text_box">
@@ -69,6 +64,5 @@
 			</ul>
 		</div>
 		<p style="text-align: center; margin-bottom: 75px; margin-top: 30px;"><a class="round_button" href="../code_beautifier/" target="_blank">Go to Code Beautifier page</a></p>
-		<script>setup();</script>
 	</body>
 </html>
